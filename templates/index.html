@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block title %}Home{% endblock %}
 {% block content %}
+
     <h1>Welcome to the database</h1>
 
     <div class="container-fluid">
@@ -11,14 +12,13 @@
                         <img src="..." class="card-img-top" alt="...">
                         <div class="card-body">
                         <h5 class="card-title">Game</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <p class="card-text">Text</p>
+                        <!----------------- Edit modal ------------------------->
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#EditModal">
                             Edit
                         </button>
                         
-                        <!-- Modal -->
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="EditModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -36,13 +36,12 @@
                             </div>
                         </div>
                         
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <!---------------------- Delete modal -------------------------->
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#DeleteModal">
                             Delete
                         </button>
                         
-                        <!-- Modal -->
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="DeleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">

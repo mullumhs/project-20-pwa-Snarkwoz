@@ -16,7 +16,7 @@ def init_routes(app):
 
 
 
-    @app.route('/add', methods=['POST'])
+    @app.route('/add', methods=['POST','GET'])
     def create_item():
         if request.method == 'POST':
             new_game = Game(
@@ -25,16 +25,19 @@ def init_routes(app):
                 genre=request.form['genre'],
                 image_url=request.form['image_url'],
                 rating=float(request.form['rating']),
-                year=int(request.form['year']))
-            db.session(new_game)
+                year=int(request.form['year']),
+                description=request.form['description']
+                )
+            db.session.add(new_game)
             db.session.commit()
             return redirect(url_for('index'))
         
-        return render_template('index.html', message='Item added successfully')
+        else:
+            return render_template('add.html', message='Item added successfully')
 
 
 
-    @app.route('/update', methods=['POST'])
+    @app.route('/update', methods=['POST','GET'])
     def update_item():
         # This route should handle updating an existing item identified by the given ID.
         return render_template('index.html', message=f'Item updated successfully')

@@ -1,28 +1,39 @@
 {% extends "base.html" %}
-{% block title %}Home{% endblock %}
+{% block title %}Add game{% endblock %}
 {% block content %}
 
-<form>
+<form method="POST">
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Title</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      <input type="text" class="form-control" id="exampleInputEmail1" name="title">
     </div>
     <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Genre</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <input type="text" class="form-control" id="exampleInputEmail1" name="publisher">
     </div>
     <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Publisher</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <input type="text" class="form-control" id="exampleInputEmail1" name="genre">
     </div>
     <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Rating</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <input type="text" class="form-control" id="exampleInputEmail1" name="rating">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Year</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" name="year">
     </div>
     <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Description</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <input type="text" class="form-control" id="exampleInputEmail1" name="description">
     </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Image URL</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" name="image_url">
+    </div>
+    <button type="submit" class="btn btn-primary">Add game</button>
 </form>
+
+
 
 {% endblock %}

@@ -13,4 +13,5 @@ class Game(db.Model):
     image_url = db.Column(db.String)
     rating = db.Column(db.Float)
     year = db.Column(db.Integer)
+    description = db.Column(db.String)
 

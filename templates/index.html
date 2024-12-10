@@ -9,10 +9,10 @@
             {% for game in games %}
             <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
                     <div class="card">
-                        <img src="..." class="card-img-top" alt="...">
+                        <img src="{{game.image_url}}" class="card-img-top" alt="...">
                         <div class="card-body">
                         <h5 class="card-title">{{game.title}}</h5>
-                        <p class="card-text">Text</p>
+                        <p class="card-text">{{game.description}}</p>
 
                         <!----------------- Edit button ------------------------->
                         <a href="{{url_for('update_item')}}"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#EditModal">
@@ -31,7 +31,7 @@
         </div>
     </div>
 
-
+    <!------------- Delete Modal -------------->
     <div class="modal fade" id="DeleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
         <div class="modal-content">
@@ -41,7 +41,7 @@
             </div>
             <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Delete</button>
+            <a href="{{url_for('delete_item',id=game.id)}}"><button type="button" class="btn btn-primary">Delete</button></a>
             </div>
         </div>
         </div>

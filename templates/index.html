@@ -11,12 +11,12 @@
                     <div class="card">
                         <img src="{{game.image_url}}" class="card-img-top" alt="...">
                         <div class="card-body">
-                        <h5 class="card-title">{{game.title}}</h5>
-                        <p class="card-text">{{game.description}}</p>
-                        <p class="card-text">Publisher: {{game.publisher}}</p>
-                        <p class="card-text">Genre: {{game.genre}}</p>
-                        <p class="card-text">Release: {{game.year}}</p>
-                        <p class="card-text">Rating: {{game.rating}}</p>
+                        <h3 class="card-title">{{game.title}}</h3>
+                        <p class="card-text"><strong>Description: </strong>{{game.description}}</p>
+                        <p class="card-text"><strong>Publisher: </strong>{{game.publisher}}</p>
+                        <p class="card-text"><strong>Genre: </strong>{{game.genre}}</p>
+                        <p class="card-text"><strong>Release: </strong>{{game.year}}</p>
+                        <p class="card-text"><strong>Rating: </strong>{{game.rating}}</p>
 
                         <!----------------- Edit button ------------------------->
                         <a href="{{url_for('update_item',id=game.id)}}"><button type="button" class="btn btn-primary">

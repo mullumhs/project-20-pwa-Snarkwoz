@@ -11,7 +11,12 @@ def init_routes(app):
 
     @app.route('/', methods=['GET'])
     def get_items():
-        games = Game.query.all()
+        search_query = request.args.get('search')
+
+        if search_query:
+            games = Game.query.filter(Game.title.ilike(f'%{search_query}%')).all()
+        else:
+            games = Game.query.all()
         return render_template('index.html', message='Displaying all items', games=games)
 
 

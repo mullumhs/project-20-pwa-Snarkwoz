@@ -13,16 +13,20 @@
                         <div class="card-body">
                         <h5 class="card-title">{{game.title}}</h5>
                         <p class="card-text">{{game.description}}</p>
+                        <p class="card-text">Publisher: {{game.publisher}}</p>
+                        <p class="card-text">Genre: {{game.genre}}</p>
+                        <p class="card-text">Release: {{game.year}}</p>
+                        <p class="card-text">Rating: {{game.rating}}</p>
 
                         <!----------------- Edit button ------------------------->
-                        <a href="{{url_for('update_item')}}"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#EditModal">
+                        <a href="{{url_for('update_item',id=game.id)}}"><button type="button" class="btn btn-primary">
                             Edit
                         </button></a>
                         
-                        <!---------------------- Delete modal -------------------------->
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#DeleteModal">
+                        <!---------------------- Delete button -------------------------->
+                        <a href="{{url_for('delete_item',id=game.id)}}"><button type="button" class="btn btn-primary">
                             Delete
-                        </button>
+                        </button></a>
                         
                         </div>
                     </div>
@@ -31,20 +35,6 @@
         </div>
     </div>
 
-    <!------------- Delete Modal -------------->
-    <div class="modal fade" id="DeleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Are you sure?</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <a href="{{url_for('delete_item',id=game.id)}}"><button type="button" class="btn btn-primary">Delete</button></a>
-            </div>
-        </div>
-        </div>
-    </div>
+
 
 {% endblock %}

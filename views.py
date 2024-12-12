@@ -32,19 +32,37 @@ def init_routes(app):
             return redirect(url_for('get_items'))
         
         else:
-            return render_template('add.html', message='Item added successfully')
+            return render_template('add.html')
 
 
 
     @app.route('/update', methods=['POST','GET'])
     def update_item():
-        # This route should handle updating an existing item identified by the given ID.
-        return render_template('index.html', message=f'Item updated successfully')
+        if request.method == 'POST':
+            id = request.form.get('id')
+            game = Game.query.get_or_404(id)
+            game.title = request.form['title']
+            game.publisher = request.form['publisher']
+            game.genre = request.form['genre']
+            game.image_url = request.form['image_url']
+            game.rating = float(request.form['rating'])
+            game.year = int(request.form['year'])
+            game.description = request.form['description']
+            db.session.commit()
+            return redirect(url_for('get_items'))
+        
+        else:
+            id = request.args.get('id')
+            game = Game.query.get_or_404(id)
+            return render_template('edit.html', game=game)
+        
 
 
 
     @app.route('/delete', methods=['GET'])
     def delete_item():
         id = request.args.get('id')
-        db.session.delete(id)
-        return render_template('index.html', message=f'Item deleted successfully')
+        game = Game.query.get_or_404(id)
+        db.session.delete(game)
+        db.session.commit()
+        return redirect(url_for('get_items'))

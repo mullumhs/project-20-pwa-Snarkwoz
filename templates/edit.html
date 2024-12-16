@@ -20,19 +20,19 @@
 
         <select class="form-select" name="genre" id = "exampleInputEmail1">
             <option selected>{{game.genre}}</option>
-            <option value="action">Action</option>
-            <option value="puzzle">Puzzle</option>
-            <option value="platformer">Platformer</option>
-            <option value="sandbox">Sandbox</option>
-            <option value="horror">Horror</option>
-            <option value="fps">FPS</option>
-            <option value="3ps">3PS</option>
-            <option value="racing">Racing</option>
-            <option value="multiplayer">Multiplayer</option>
-            <option value="rpg">RPG</option>
-            <option value="mmo rpg">MMO RPG</option>
-            <option value="rts">RTS</option>
-            <option value="mobile">Mobile</option> 
+            <option value="Action">Action</option>
+            <option value="Puzzle">Puzzle</option>
+            <option value="Platformer">Platformer</option>
+            <option value="Sandbox">Sandbox</option>
+            <option value="Horror">Horror</option>
+            <option value="FPS">FPS</option>
+            <option value="3PS">3PS</option>
+            <option value="Racing">Racing</option>
+            <option value="Multiplayer">Multiplayer</option>
+            <option value="Rpg">RPG</option>
+            <option value="MMO RPG">MMO RPG</option>
+            <option value="RTS">RTS</option>
+            <option value="Mobile">Mobile</option>
             </select>
     </div>
     
@@ -40,19 +40,26 @@
         <label for="exampleInputEmail1" class="form-label">Rating</label>
         <input value="{{game.rating}}" type="text" class="form-control" id="exampleInputEmail1" name="rating">
     </div>
+
     <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Year</label>
         <input value="{{game.year}}" type="text" class="form-control" id="exampleInputEmail1" name="year">
     </div>
+
     <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Description</label>
         <input value="{{game.description}}" type="text" class="form-control" id="exampleInputEmail1" name="description">
     </div>
+
     <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Image URL</label>
         <input value="{{game.image_url}}" type="text" class="form-control" id="exampleInputEmail1" name="image_url">
     </div>
-    <button type="submit" class="btn btn-primary">Confirm</button>
+
+    <button type="submit" class="btn btn-primary">
+        Confirm
+    </button>
+    
 </form>
 
 {% endblock %}

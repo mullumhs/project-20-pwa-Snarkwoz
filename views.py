@@ -17,7 +17,7 @@ def init_routes(app):
             games = Game.query.filter(Game.title.ilike(f'%{search_query}%')).all()
         else:
             games = Game.query.all()
-        return render_template('index.html', message='Displaying all items', games=games)
+        return render_template('index.html', games=games)
 
 
 
@@ -44,7 +44,7 @@ def init_routes(app):
     @app.route('/update', methods=['POST','GET'])
     def update_item():
         if request.method == 'POST':
-            id = request.form.get('id')
+            id = request.args.get('id')
             game = Game.query.get_or_404(id)
             game.title = request.form['title']
             game.publisher = request.form['publisher']

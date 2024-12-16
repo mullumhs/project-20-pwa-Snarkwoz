@@ -9,35 +9,40 @@
     </label>
       <input type="text" class="form-control" id="exampleInputEmail1" name="title">
     </div>
-    <div class="mb-3">
 
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Genre
-            </a>
-            <select class="form-select" aria-label="Default select example">
-                <option class="dropdown-item" href="#">Action</option>>
-                <option class="dropdown-item" href="#">Puzzle</option>
-                <option class="dropdown-item" href="#">Platformer</option>
-                <option class="dropdown-item" href="#">Sandbox</option>
-                <option class="dropdown-item" href="#">Horror</option>
-                <option class="dropdown-item" href="#">FPS</option>
-                <option class="dropdown-item" href="#">3PS</option>
-                <option class="dropdown-item" href="#">Racing</option>
-                <option class="dropdown-item" href="#">Multiplayer</option>
-                <option class="dropdown-item" href="#">RPG</option>
-                <option class="dropdown-item" href="#">MMO RPG</option>
-                <option class="dropdown-item" href="#">RTS</option>
-                <option class="dropdown-item" href="#">Mobile</option>
-                
-              </select>
-
-    </div>
     <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">
             Publisher
         </label>
-        <input type="text" class="form-control" id="exampleInputEmail1" name="genre">
+        <input type="text" class="form-control" id="exampleInputEmail1" name="publisher">
     </div>
+
+    <div class="mb-3">
+
+        <label for="genre" class="form-label">
+            Genre
+        </label>
+
+        <select class="form-select" name="genre" id = "exampleInputEmail1">
+            <option selected></option>
+            <option value="action">Action</option>
+            <option value="puzzle">Puzzle</option>
+            <option value="platformer">Platformer</option>
+            <option value="sandbox">Sandbox</option>
+            <option value="horror">Horror</option>
+            <option value="fps">FPS</option>
+            <option value="3ps">3PS</option>
+            <option value="racing">Racing</option>
+            <option value="multiplayer">Multiplayer</option>
+            <option value="rpg">RPG</option>
+            <option value="mmo rpg">MMO RPG</option>
+            <option value="rts">RTS</option>
+            <option value="mobile">Mobile</option>
+            
+            </select>
+
+    </div>
+    
     <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">
             Rating
@@ -66,7 +71,6 @@
         Add game
     </button>
 </form>
-
 
 
 {% endblock %}

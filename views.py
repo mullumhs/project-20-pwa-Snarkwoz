@@ -63,7 +63,6 @@ def init_routes(app):
         
 
 
-
     @app.route('/delete', methods=['GET'])
     def delete_item():
         id = request.args.get('id')

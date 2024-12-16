@@ -8,11 +8,10 @@ from models import db, Game
 # You can also use flash for displaying status messages
 
 def init_routes(app):
-
+    # Checks for a search and displays all games
     @app.route('/', methods=['GET'])
     def get_items():
         search_query = request.args.get('search')
-
         if search_query:
             games = Game.query.filter(Game.title.ilike(f'%{search_query}%')).all()
         else:
@@ -20,8 +19,8 @@ def init_routes(app):
         return render_template('index.html', games=games)
 
 
-
     @app.route('/add', methods=['POST','GET'])
+    # Create a new game 
     def create_item():
         if request.method == 'POST':
             new_game = Game(
@@ -40,8 +39,8 @@ def init_routes(app):
             return render_template('add.html')
 
 
-
     @app.route('/update', methods=['POST','GET'])
+    # Updates a game
     def update_item():
         if request.method == 'POST':
             id = request.args.get('id')
@@ -64,6 +63,7 @@ def init_routes(app):
 
 
     @app.route('/delete', methods=['GET'])
+    # Deletes a game
     def delete_item():
         id = request.args.get('id')
         game = Game.query.get_or_404(id)

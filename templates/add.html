@@ -2,6 +2,8 @@
 {% block title %}Add game{% endblock %}
 {% block content %}
 
+<!-- The form for adding a game -->
+
 <form method="POST">
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">
@@ -22,7 +24,7 @@
         <label for="genre" class="form-label">
             Genre
         </label>
-
+        <!-- A dropdown select for the genres -->
         <select class="form-select" name="genre" id = "exampleInputEmail1">
             <option selected></option>
             <option value="Action">Action</option>
@@ -38,9 +40,7 @@
             <option value="MMO RPG">MMO RPG</option>
             <option value="RTS">RTS</option>
             <option value="Mobile">Mobile</option>
-            
             </select>
-
     </div>
     
     <div class="mb-3">
@@ -49,28 +49,33 @@
         </label>
         <input type="text" class="form-control" id="exampleInputEmail1" name="rating">
     </div>
+
     <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">
             Year
         </label>
         <input type="text" class="form-control" id="exampleInputEmail1" name="year">
     </div>
+
     <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">
             Description
         </label>
         <input type="text" class="form-control" id="exampleInputEmail1" name="description">
     </div>
+
     <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">
             Image URL
         </label>
+        <!-- A placeholder image for if the user doesn't have in image to input -->
         <input value="https://media.istockphoto.com/id/1409329028/vector/no-picture-available-placeholder-thumbnail-icon-illustration-design.jpg?s=612x612&w=0&k=20&c=_zOuJu755g2eEUioiOUdz_mHKJQJn-tDgIAhQzyeKUQ=" type="text" class="form-control" id="exampleInputEmail1" name="image_url">
     </div>
+
+    <!-- Submits the form -->
     <button type="submit" class="btn btn-primary">
         Add game
     </button>
 </form>
-
 
 {% endblock %}

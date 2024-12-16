@@ -2,6 +2,9 @@
 {% block title %}Edit{% endblock %}
 {% block content %}
 
+<!-- The form for editing a game -->
+<!-- Each form has the data of the existing game upon the edit page appearing -->
+
 <form method="POST">
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Title</label>
@@ -18,6 +21,7 @@
             Genre
         </label>
 
+        <!-- Dropdown select for the genres -->
         <select class="form-select" name="genre" id = "exampleInputEmail1">
             <option selected>{{game.genre}}</option>
             <option value="Action">Action</option>
@@ -56,6 +60,7 @@
         <input value="{{game.image_url}}" type="text" class="form-control" id="exampleInputEmail1" name="image_url">
     </div>
 
+    <!-- Submits the form -->
     <button type="submit" class="btn btn-primary">
         Confirm
     </button>

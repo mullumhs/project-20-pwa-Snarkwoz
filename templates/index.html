@@ -2,8 +2,7 @@
 {% block title %}Home{% endblock %}
 {% block content %}
 
-    <h1>Welcome to the database</h1>
-
+<!------------ The Cards --------------->
     <div class="container-fluid">
         <div class="row">
             {% for game in games %}
@@ -23,7 +22,7 @@
                             Edit
                         </button></a>
                         
-                        <!---------------------- Delete button -------------------------->
+                        <!----------------- Delete button ----------------------->
                         <a href="{{url_for('delete_item',id=game.id)}}"><button type="button" class="btn btn-primary">
                             Delete
                         </button></a>

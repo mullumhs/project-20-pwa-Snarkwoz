@@ -7,53 +7,52 @@
         <div class="row">
             {% for game in games %}
             <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-                    <div class="card">
-                        <img src="{{game.image_url}}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                        <h3 class="card-title">{{game.title}}</h3>
-                        <p class="card-text">"{{game.description}}"</p>
-                        <!-------------------- Details ------------------------>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                            Details
-                        </button>
-                        
-                        <!-- Modal -->
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                <h1 class="modal-title fs-5" id="exampleModalLabel">Details</h1>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <img src="{{game.image_url}}" class="card-img-top" alt="...">
-                                    <h3 class="card-title">{{game.title}}</h3>
-                                    <p class="card-text"><strong>Description: </strong>{{game.description}}</p>
-                                    <p class="card-text"><strong>Publisher: </strong>{{game.publisher}}</p>
-                                    <p class="card-text"><strong>Genre: </strong>{{game.genre}}</p>
-                                    <p class="card-text"><strong>Release: </strong>{{game.year}}</p>
-                                    <p class="card-text"><strong>Rating: </strong>{{game.rating}}</p>
-                                </div>
-                                <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <div class="card">
+                    <img src="{{game.image_url}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <h3 class="card-title">{{game.title}}</h3>
+                    <p class="card-text">"{{game.description}}"</p>
 
-                                <!----------------- Edit button ------------------------->
-                                <a href="{{url_for('update_item',id=game.id)}}"><button type="button" class="btn btn-primary">
-                                    Edit
-                                </button></a>
-
-                                <!----------------- Delete button ----------------------->
-                                <a href="{{url_for('delete_item',id=game.id)}}"><button type="button" class="btn btn-danger">
-                                    Delete
-                                </button></a>
-                                
-                                </div>
+                    <!-------------------- Details ------------------------>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Details
+                    </button>
+                    
+                    <!--------- Details Modal Modal ----------->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Details</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
+                            <div class="modal-body">
+                                <img src="{{game.image_url}}" class="card-img-top" alt="...">
+                                <h3 class="card-title">{{game.title}}</h3>
+                                <p class="card-text"><strong>Description: </strong>{{game.description}}</p>
+                                <p class="card-text"><strong>Publisher: </strong>{{game.publisher}}</p>
+                                <p class="card-text"><strong>Genre: </strong>{{game.genre}}</p>
+                                <p class="card-text"><strong>Release: </strong>{{game.year}}</p>
+                                <p class="card-text"><strong>Rating: </strong>{{game.rating}}</p>
+                            </div>
+                            <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+                            <!----------------- Edit button ------------------------->
+                            <a href="{{url_for('update_item',id=game.id)}}"><button type="button" class="btn btn-primary">
+                                Edit
+                            </button></a>
+
+                            <!----------------- Delete button ----------------------->
+                            <a href="{{url_for('delete_item',id=game.id)}}"><button type="button" class="btn btn-danger">
+                                Delete
+                            </button></a>
                             </div>
                         </div>
-                        
                         </div>
                     </div>
+                    </div>
+                </div>
             </div>
             {% endfor %}
         </div>
